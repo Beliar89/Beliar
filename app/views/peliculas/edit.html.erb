@@ -1,0 +1,21 @@
+<div class="peliculas"> 
+
+<%= form_for @pelicula do |pelic|%>
+
+<br/>
+<br/>
+ 
+<p>Nombre: <br/><%= pelic.text_field :name%><br/></p>
+<p>Estrellas: <br/><%= pelic.text_field :stars%><br/></p>
+<p>Actor principal: <br/><%= pelic.text_field :main_actor%><br/></p>
+<p>Año: <br/><%= pelic.text_field :year%><br/></p>
+
+</div>
+
+
+ 
+<%= pelic.submit "enviar peli" %>
+
+
+ 
+<%end%>

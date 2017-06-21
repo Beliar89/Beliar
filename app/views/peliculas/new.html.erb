@@ -1,0 +1,29 @@
+
+<h2>Añade aquí una nueva película</h2>
+
+<%= form_for @pelicula do |futbol| %>
+
+<p>
+	<%= futbol.label :name %> <br/>
+	<%= futbol.text_field :name %>
+</p>
+
+<p>
+	<%= futbol.label :stars %> <br/>
+	<%= futbol.text_field :stars %>
+</p>
+
+<p>
+	<%= futbol.label :main_actor %> <br/>
+	<%= futbol.text_field :main_actor %>
+</p>
+
+<p>
+	<%= futbol.label :year %> <br/>
+	<%= futbol.text_field :year %>
+</p>
+
+<%= futbol.submit "Añadir peli" %>
+
+<% end %>
+
