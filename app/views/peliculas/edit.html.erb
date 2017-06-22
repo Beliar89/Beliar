@@ -1,21 +1,14 @@
-<div class="peliculas"> 
+<h1>Peliculas#edit</h1>
+<p>Find me in app/views/peliculas/edit.html.erb</p>
 
-<%= form_for @pelicula do |pelic|%>
-
-<br/>
-<br/>
+<%= form_for @pelicula do |pelicula|%>
  
-<p>Nombre: <br/><%= pelic.text_field :name%><br/></p>
-<p>Estrellas: <br/><%= pelic.text_field :stars%><br/></p>
-<p>Actor principal: <br/><%= pelic.text_field :main_actor%><br/></p>
-<p>Año: <br/><%= pelic.text_field :year%><br/></p>
+<%= pelicula.text_field :name%>
+<%= pelicula.text_field :stars%>
+<%= pelicula.text_field :main_actor%>
+<%= pelicula.text_field :year%>
 
-</div>
-
-
- 
-<%= pelic.submit "enviar peli" %>
-
-
+<%= pelicula.submit "enviar pelicula" %>
  
 <%end%>
+ 
