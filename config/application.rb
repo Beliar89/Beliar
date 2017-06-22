@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Movies
+module Pelicula
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
@@ -16,7 +16,7 @@ module Movies
     #lenguage resourses
     config.i18n.default_locale = :en
     #sidwkip
-    config.active_job.queue_adapter = :sidekiq
+    # config.active_job.queue_adapter = :sidekiq
     #sinc
     #config.active_job.queue_adapter = Rails.envproduction? ? :sidekiq : :async
   end
