@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620122038) do
+ActiveRecord::Schema.define(version: 20170622095931) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -68,6 +68,18 @@ ActiveRecord::Schema.define(version: 20170620122038) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "subscription"
+    t.string "channel"
+    t.boolean "active"
+    t.integer "plan"
+    t.bigint "amount"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
   create_table "peliculas", force: :cascade do |t|
     t.string "name"
     t.integer "stars"
@@ -77,6 +89,7 @@ ActiveRecord::Schema.define(version: 20170620122038) do
     t.datetime "updated_at", null: false
     t.text "url"
     t.string "director"
+    t.integer "precio"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -86,6 +99,17 @@ ActiveRecord::Schema.define(version: 20170620122038) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_settings_on_user_id"
+  end
+
+  create_table "top_movies", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "stars"
+    t.string "name"
+    t.integer "year"
+    t.integer "ranking"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_top_movies_on_user_id"
   end
 
   create_table "topmovies", force: :cascade do |t|

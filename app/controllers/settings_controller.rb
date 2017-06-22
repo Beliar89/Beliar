@@ -2,6 +2,7 @@ class SettingsController < ApplicationController
 	layout "admin"
   def index
   @setting = current_user.setting
+  @payment = current_user.payments
 end
  
 def show

@@ -1,0 +1,25 @@
+<!-- PARCIAL HEADER -->
+<%= render "shared/header" %>
+<div class="container">
+<!-- PARCIAL BOX SEARCHS -->
+<%= render "shared/boxsearchs" %>
+<div class="row">
+<% @peliculas.each do |peli|%>
+<div class="col-sm-6 col-md-4 col-lg-3">
+<div class="latest-movie">
+<a href="#"><img src="<%= peli.url %>" style="width:165px; height:
+125px;"></a>
+<p><b>Id:</b> <%= pelicula.id %></p>
+<p><b>Nombre:</b> <%= pelicula.name %></p>
+<p><b>Director:</b> <%= pelicula.director %></p>
+<p><b>Año:</b> <%= pelicula.year %></p>
+<p><b>Genero:</b> <%= pelicula.genre %></p>
+</div>
+</div>
+<%end%>
+</div>
+</div> <!-- end container -->
+<!-- PARCIAL FOOTER -->
+<%= render "shared/footer" %>
+<a href="#" class="btn btn-primary text-center white"><span
+class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Comprar</a>
