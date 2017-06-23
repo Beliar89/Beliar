@@ -1,47 +1,47 @@
 class CommentsController < ApplicationController
 	def index
-	@comentarios = Comentario.all
+	@comments = Comment.all
 end
 
 def show
-	@comentario = Comentario.find(params[:id])
+	@comment = Comment.find(params[:id])
 end
 
 def new
-	@comentario = Comentario.new
+	@comment = Comment.new
 end
 
 # CREATE
 def create
-	@pelicula = Pelicula.find(params[:pelicula_id])
-	@comentario = @pelicula.comentarios.create(comentario_params)
-	redirect_to pelicula_path(@pelicula)
+	@comment = Comment.find(params[:comment_id])
+	@comment = @comment.comments.create(comment_params)
+	redirect_to comment_path(@comment)
 end
 
 # DESTROY
 def destroy
-	@pelicula = Pelicula.find(params[:pelicula_id])
-	@comentario = @pelicula.comentarios.find(params[:id])
+	@comment = Comment.find(params[:comment_id])
+	@comment = @comment.comments.find(params[:id])
 
-	@comentario.destroy
-	redirect_to pelicula_path(@pelicula)
+	@comment.destroy
+	redirect_to comment_path(@comment)
 end
 
 def edit
-	@comentario = Comentario.find(params[:id])
+	@comment = Comment.find(params[:id])
 end
 
 def update
-	@comentario = Comentario.find(params[:id])
-	if @comentario.update_attributes(comentario_params)
-	redirect_to comentarios_path
+	@comment = Comment.find(params[:id])
+	if @comment.update_attributes(comment_params)
+	redirect_to comments_path
 	else
 	render :edit
 	end
 end
 
 private
-def comentario_params
-params.require(:comentario).permit(:name, :comment)
+def comment_params
+params.require(:comment).permit(:name, :comment)
 end
 

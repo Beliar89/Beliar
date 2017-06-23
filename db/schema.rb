@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170622095931) do
+ActiveRecord::Schema.define(version: 20170622111553) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -99,25 +99,6 @@ ActiveRecord::Schema.define(version: 20170622095931) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_settings_on_user_id"
-  end
-
-  create_table "top_movies", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "stars"
-    t.string "name"
-    t.integer "year"
-    t.integer "ranking"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_top_movies_on_user_id"
-  end
-
-  create_table "topmovies", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "pelicula_id"
-    t.index ["pelicula_id"], name: "index_topmovies_on_pelicula_id"
   end
 
   create_table "users", force: :cascade do |t|
